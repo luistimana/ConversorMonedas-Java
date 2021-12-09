@@ -17,7 +17,41 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        EXTERNA:
+        while(true){
+            System.out.println("CONVERSOR DE MONEDAS");
+            System.out.println("1 - Soles Peruanos a Dolares.\n"
+                             + "2 - Pesos Mexicanos a Dolares.\n"
+                             + "3 - Pesos Colombianos a Dolares.\n"
+                             + "4 - Salir.");
+            
+            System.out.println("Ingrese una opcion: ");
+            Scanner leer = new Scanner(System.in);
+            char opcion = leer.next().charAt(0);
+            
+            switch(opcion){
+                case '1':
+                    convertir(4.01, "Soles Peruanos");
+                    break;
+                    
+                case '2':
+                    convertir(22.15, "Pesos Mexicanos");
+                    break;
+                
+                case '3':
+                    convertir(3851.90, "Pesos Colombianos");
+                    break;
+                
+                case '4':
+                    System.out.println("Cerrando Programa");
+                    break EXTERNA;
+                    
+                default:
+                    System.out.println("Opcion Incorrecta.");
+                    break;
+            }
+        }
     }
     
     static void convertir(double valorDolar, String pais){
